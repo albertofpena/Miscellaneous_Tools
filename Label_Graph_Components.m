@@ -63,7 +63,7 @@ ind = find(Mat);
 LabNet = sparse(size(Mat,1),size(Mat,2));
 
 % ---------- Detecting Graph Components 
-[Nclust,allclust] = conncomp(sparse(logical(Mat)));
+[Nclust,allclust] = conncomp_rep(sparse(logical(Mat)));
 allclust = allclust(:);
 temp = accumarray(allclust,allclust*0+1);
 clust = find(temp>=2);
